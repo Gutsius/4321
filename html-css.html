@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Аниме</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <script>
+    function displayWindowInfo() {
+    // Получаем дату последней модификации документа
+    var lastModified = document.lastModified;
+
+    // Выводим информацию в окно браузера
+    alert("Документ был последний раз изменен: " + lastModified);
+    }
+</script>
+<script>
+  function displayNavigatorInfo() {
+    var browserInfo = "Тип браузера: " + navigator.userAgent + "\n";
+    browserInfo += "Название браузера: " + navigator.appName + "\n";
+
+    alert(browserInfo);
+   
+
+}
+</script>
+<script>
+  // Функция для изменения стилей текста в первом абзаце
+  function changeTextStyles(element) {
+      element.style.color = "blue";
+      element.style.fontFamily = "Times New Roman";
+  }
+
+  // Функция для восстановления стилей текста в первом абзаце
+  function restoreTextStyles(element) {
+      element.style.color = "";
+      element.style.fontFamily = "";
+  }
+
+  // Функция для изменения стилей второго абзаца
+  function changeParagraphStyles(element) {
+      element.style.marginRight = "3cm";
+      element.style.textIndent = "2.5cm";
+  }
+
+  // Функция для восстановления стилей второго абзаца
+  function restoreParagraphStyles(element) {
+      element.style.marginRight = "";
+      element.style.textIndent = "";
+  }
+</script>
+
+
+<script>
+  function displayLocationInfo() {
+    var username = prompt("Введите ваше имя:"); // Запрашиваем имя пользователя
+    var documentURL = location.href; // Получаем адрес загруженного документа
+    var message = "Здравствуйте, " + username + "!\n";
+    message += "Адрес текущего документа: " + documentURL;
+
+    alert(message);
+}
+</script>
+
+<script>
+  function displayScreenInfo() {
+    // Получаем параметры экрана из объекта screen
+    var screenInfo = "Ширина экрана: " + screen.width + " пикселей\n";
+    screenInfo += "Высота экрана: " + screen.height + " пикселей\n";
+    screenInfo += "Разрешение экрана: " + screen.pixelDepth + " бит/пиксель";
+
+    // Выводим информацию в окно подтверждения
+    var confirmed = confirm("Информация о параметрах экрана:\n\n" + screenInfo);
+
+    // Если пользователь нажал "Ок" в окне подтверждения, выведем информацию еще раз
+    if (confirmed) {
+        alert(screenInfo);
+    }
+}
+</script>
+<script>
+  // Функция для переключения стилей ячейки при наведении и отводе мыши
+  function toggleCellStyles(cell) {
+      if (cell.className === "cell") {
+          cell.className = "cell alternate"; // Альтернативный стиль
+      } else {
+          cell.className = "cell"; // Исходный стиль
+      }
+  }
+</script>
+
+</head>
+<body>
+  <script>
+    function hideImage(imageName) {
+        var image = document.getElementsByName(imageName)[0];
+        image.style.display = "none";
+    }
+  
+    function showImage(imageName) {
+        var image = document.getElementsByName(imageName)[0];
+        image.style.display = "block";
+    }
+  
+    function swapImages() {
+        var image1 = document.getElementsByName("img1")[0];
+        var image3 = document.getElementsByName("img3")[0];
+        
+        var zIndex1 = image3.style.zIndex;
+        image3.style.zIndex = image1.style.zIndex;
+        image1.style.zIndex = zIndex1;
+    }
+  </script>
+<div class="img__box">
+  <img class="img1" src="img1.png" alt="" style="max-height:150px; z-index: 1;" name="img1">
+  <img class="img2" src="img2.png" alt="" style="max-height:150px;" name="img2">  
+  <img class="img3" src="img3.png" alt=""  style="max-height:150px;  z-index: 3;" name="img3">
+  <div class="img__button">
+    <button class="bt1" onclick="hideImage('img2')">Скрыть рисунок в среднем слое</button>
+    <button class="bt2" onclick="showImage('img2')">Показать рисунок в среднем слое</button>
+    <button class="bt3" onclick="swapImages()">Поменять местами слои</button>
+  </div>
+</div>
+  <table>
+    <tr>
+        <td class="cell" onmouseover="toggleCellStyles(this)" onmouseout="toggleCellStyles(this)">Ячейка 1</td>
+        <td class="cell" onmouseover="toggleCellStyles(this)" onmouseout="toggleCellStyles(this)">Ячейка 2</td>
+    </tr>
+    <tr>
+        <td class="cell" onmouseover="toggleCellStyles(this)" onmouseout="toggleCellStyles(this)">Ячейка 3</td>
+        <td class="cell" onmouseover="toggleCellStyles(this)" onmouseout="toggleCellStyles(this)">Ячейка 4</td>
+    </tr>
+</table>
+
+&nbsp;<div class="text">
+    <main>
+      <h1>История аниме</h1>
+        <p>Аниме – это значимый пласт современной мировой культуры. С каждым днем число поклонников растет, а студии ежегодно выпускают больше разнообразных аниме. Но какой была японская анимация сто лет назад и как западные страны повлияли на ее развитие? </p>
+  
+        </details>&nbsp;<h2>Первое аниме</h2>
+          <p  onmouseover="changeTextStyles(this)" onmouseout="restoreTextStyles(this)">Датой создания японской анимации считается 1917 год. Это были короткометражные аниме, продолжительностью от одной до пяти минут. Обычно художники в одиночку занимались их созданием, пытаясь повторить практику западной анимации.
+
+            Первого января 1917 года в свет явился один из первых  официальных японских анимационных фильмов – «Новый альбом набросков»  Дэкотэна Симокавы. Спустя месяц художник создал новую картину – «Новый альбом набросков – Провал великого плана».
+            
+            Симокава не единственный, кто приложил руку к становлению анимации. В мае этого же года Сэйтаро Китаяма выпустил первую анимационную работу «Как краб отомстил мартышке». Сюжетом послужила одноименная японская народная сказка. Спустя год Китаяма создал «Момотаро» по мотивам народной сказки о приключениях героя. 
+            
+            К сожалению, ни один из опытов художников не дошел до наших дней.</p>
+          </details>&nbsp;<h3>Самое старое аниме, сохранившееся до наших дней</h3>
+          <p onmouseover="changeParagraphStyles(this)"onmouseout="restoreParagraphStyles(this)">Из всех аниме дошедших до сегодняшнего дня, работа Санаэ Ямамото «Гора, на которой оставляли умирать старух» – является самой старой. Картина вышла в свет в 1925 году. В автобиографии Ямамото отмечено, что на создание картины, продолжительностью в 18 минут, ушло полтора года. 
+
+            За основу сюжета взята японская легенда о фермере, который пытался спрятать свою мать от ненависти Лорда к людям старше 60-ти лет. 
+            
+            Анимация принесла Ямамото не только известность, но и временное место в Министерстве образования.</p>
+        </details>&nbsp;<h4>Аниме в наши дни</h4>
+        <p >Пандемия COVID-19 значительно повлияла на производство японской анимации. Выпуск многих аниме был перенесен, а онгоинги – приостановлены. 
+
+          Японские студии высказали опасения о дальнейшей судьбе производства аниме, связанных с развитием цифровых технологий у китайских и корейских конкурентов. 
+          
+          В 2020 году фильм «Истребитель демонов: Поезд “Бесконечный”» обогнал «Унесенных призраками» и стал самым кассовым аниме в истории.
+          
+          В 2021 году сериалы «Магическая битва», «Клинок, уничтожающий демонов» и «Токийские мстители» вошли в десятку обсуждаемых мировых шоу в Твиттере. 
+          
+          В этом же году последний сезон «Атаки титанов» побил мировой рекорд и стал «самым востребованным аниме-телешоу».</p>
+    </main>
+  </div> 
+  <input class="but_win" type="button" value="Window" OnClick=displayWindowInfo()>
+  <input id="navigatorBtn" class="but_nav" type="button" value="Navigator" OnClick=displayNavigatorInfo()>
+  <input class="but_loc" type="button" value="Location" OnClick=displayLocationInfo()>
+  <input class="but_scr" type="button" value="Screen" OnClick=displayScreenInfo()>
+
+</body>
+</html>
